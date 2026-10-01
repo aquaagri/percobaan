@@ -1,0 +1,375 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="AquaAgri.id — katalog kebutuhan perikanan, pancing, umpan, ikan, seafood, dan alat budidaya."
+    >
+
+    <title>AquaAgri.id | Kebutuhan Perikanan</title>
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#" class="brand" onclick="showHome()">
+                <div class="brand-icon">🐟</div>
+                <span>AquaAgri<span class="brand-dot">.id</span></span>
+            </a>
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Buka menu"
+            >
+                ☰
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" onclick="showHome()">Beranda</a>
+                <a href="#kategori" onclick="showHome()">Kategori</a>
+                <a href="#produk" onclick="showAllProducts()">Produk</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- ================= HOME ================= -->
+        <section id="homePage" class="page">
+
+            <!-- HERO -->
+            <section class="hero">
+                <div class="container hero-content">
+
+                    <div class="hero-text">
+
+                        <span class="eyebrow">
+                            🐟 Katalog Kebutuhan Perikanan
+                        </span>
+
+                        <h1>
+                            Belanja Kebutuhan
+                            <span>Perikanan</span>
+                        </h1>
+
+                        <p>
+                            Temukan berbagai produk pilihan untuk kebutuhan
+                            ikan, pancing, dan budidaya.
+                        </p>
+
+                        <button
+                            class="primary-btn"
+                            onclick="scrollToCategories()"
+                        >
+                            Jelajahi Produk
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="fish-decoration fish-1">🐟</div>
+                        <div class="fish-decoration fish-2">🐠</div>
+
+                        <div class="hero-circle">
+                            <span>🌊</span>
+                            <strong>AquaAgri</strong>
+                            <small>Perikanan & Budidaya</small>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- KATEGORI -->
+            <section class="categories-section" id="kategori">
+
+                <div class="container">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-label">PILIHAN KATEGORI</span>
+                            <h2>Temukan yang kamu cari</h2>
+                        </div>
+
+                        <p>
+                            Pilih kategori untuk melihat produk yang tersedia.
+                        </p>
+                    </div>
+
+
+                    <div class="category-grid">
+
+                        <button
+                            class="category-card"
+                            onclick="showCategory('produk-olahan')"
+                        >
+                            <div class="category-icon green">
+                                🍽️
+                            </div>
+
+                            <div>
+                                <h3>Produk Olahan Ikan</h3>
+                                <p>Olahan ikan dan produk turunannya.</p>
+                            </div>
+
+                            <span class="category-arrow">→</span>
+                        </button>
+
+
+                        <button
+                            class="category-card"
+                            onclick="showCategory('ikan-seafood')"
+                        >
+                            <div class="category-icon blue">
+                                🐟
+                            </div>
+
+                            <div>
+                                <h3>Ikan & Seafood Segar</h3>
+                                <p>Pilihan ikan dan seafood untuk kebutuhanmu.</p>
+                            </div>
+
+                            <span class="category-arrow">→</span>
+                        </button>
+
+
+                        <button
+                            class="category-card"
+                            onclick="showCategory('pancing-umpan')"
+                        >
+                            <div class="category-icon orange">
+                                🎣
+                            </div>
+
+                            <div>
+                                <h3>Pancing & Umpan</h3>
+                                <p>Perlengkapan memancing dan berbagai umpan.</p>
+                            </div>
+
+                            <span class="category-arrow">→</span>
+                        </button>
+
+
+                        <button
+                            class="category-card"
+                            onclick="showCategory('alat-budidaya')"
+                        >
+                            <div class="category-icon teal">
+                                🧰
+                            </div>
+
+                            <div>
+                                <h3>Alat Budidaya</h3>
+                                <p>Peralatan untuk mendukung kegiatan budidaya.</p>
+                            </div>
+
+                            <span class="category-arrow">→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRODUK UNGGULAN -->
+            <section class="featured-section" id="produk">
+
+                <div class="container">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-label">PRODUK PILIHAN</span>
+                            <h2>Produk yang mungkin kamu cari</h2>
+                        </div>
+
+                        <button
+                            class="text-btn"
+                            onclick="showAllProducts()"
+                        >
+                            Lihat semua →
+                        </button>
+                    </div>
+
+                    <div
+                        class="product-grid"
+                        id="featuredProducts"
+                    ></div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- ================= PRODUCT PAGE ================= -->
+        <section id="productPage" class="page hidden">
+
+            <div class="container product-page-container">
+
+                <!-- BACK -->
+                <button
+                    class="back-btn"
+                    onclick="showHome()"
+                >
+                    ← Kembali
+                </button>
+
+
+                <!-- TITLE -->
+                <div class="product-page-heading">
+
+                    <div>
+                        <span
+                            class="section-label"
+                            id="categoryLabel"
+                        >
+                            PRODUK
+                        </span>
+
+                        <h1 id="categoryTitle">
+                            Semua Produk
+                        </h1>
+                    </div>
+
+                    <p id="productCount">
+                        0 produk
+                    </p>
+
+                </div>
+
+
+                <!-- TOOLBAR -->
+                <div class="product-toolbar">
+
+                    <div class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Cari produk..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="categoryFilter"
+                        aria-label="Filter kategori"
+                    >
+                        <option value="all">
+                            Semua kategori
+                        </option>
+
+                        <option value="produk-olahan">
+                            Produk Olahan Ikan
+                        </option>
+
+                        <option value="ikan-seafood">
+                            Ikan & Seafood Segar
+                        </option>
+
+                        <option value="pancing-umpan">
+                            Pancing & Umpan
+                        </option>
+
+                        <option value="alat-budidaya">
+                            Alat Budidaya
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- LOADING -->
+                <div
+                    class="loading"
+                    id="loading"
+                >
+                    <div class="spinner"></div>
+                    <p>Memuat produk...</p>
+                </div>
+
+
+                <!-- PRODUCTS -->
+                <div
+                    class="product-grid"
+                    id="productGrid"
+                ></div>
+
+
+                <!-- EMPTY -->
+                <div
+                    class="empty-state hidden"
+                    id="emptyState"
+                >
+                    <div>🔎</div>
+
+                    <h3>Produk tidak ditemukan</h3>
+
+                    <p>
+                        Coba gunakan kata kunci atau kategori lainnya.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <div class="footer-brand">
+                    🐟 AquaAgri<span>.id</span>
+                </div>
+
+                <p>
+                    Katalog pilihan untuk kebutuhan perikanan,
+                    pancing, dan budidaya.
+                </p>
+            </div>
+
+            <div class="footer-note">
+                <small>
+                    © <span id="currentYear"></span>
+                    AquaAgri.id
+                </small>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
